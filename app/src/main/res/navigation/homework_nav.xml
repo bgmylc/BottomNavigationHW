@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homework_nav"
+    app:startDestination="@id/action_home">
+
+    <fragment
+        android:id="@+id/action_home"
+        android:name="com.begumyolcu.navigationhw.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/additionFragment"
+        android:name="com.begumyolcu.navigationhw.AdditionFragment"
+        android:label="fragment_addition"
+        tools:layout="@layout/fragment_addition" >
+        <action
+            android:id="@+id/addResultGecis"
+            app:destination="@id/additionResultFragment"
+            app:popUpTo="@id/additionFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/addHomeGecis"
+            app:destination="@id/action_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/additionResultFragment"
+        android:name="com.begumyolcu.navigationhw.AdditionResultFragment"
+        android:label="fragment_addition_result"
+        tools:layout="@layout/fragment_addition_result" >
+        <argument
+            android:name="toplamaSonuc"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/addResultHomeGecis"
+            app:destination="@id/action_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/multiplicationFragment"
+        android:name="com.begumyolcu.navigationhw.MultiplicationFragment"
+        android:label="fragment_multiplication"
+        tools:layout="@layout/fragment_multiplication" >
+        <action
+            android:id="@+id/multResultGecis"
+            app:destination="@id/multiplicationResultFragment"
+            app:popUpTo="@id/multiplicationFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/multHomeGecis"
+            app:destination="@id/action_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/multiplicationResultFragment"
+        android:name="com.begumyolcu.navigationhw.MultiplicationResultFragment"
+        android:label="fragment_multiplication_result"
+        tools:layout="@layout/fragment_multiplication_result" >
+        <argument
+            android:name="carpmaSonuc"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/multResultHomeGecis"
+            app:destination="@id/action_home" />
+    </fragment>
+</navigation>

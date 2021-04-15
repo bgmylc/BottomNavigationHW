@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/additionFragment"
+        android:icon="@drawable/resim_toplama"
+        android:title="Toplama" />
+    <item
+        android:id="@+id/multiplicationFragment"
+        android:icon="@drawable/resim_carpma"
+        android:title="Çarpma" />
+</menu>
